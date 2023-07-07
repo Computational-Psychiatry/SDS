@@ -34,7 +34,8 @@ def rulers_Validator(validator,SDS_files,JSON_data):
 
 def pathloaders(SDS_Json_file,JSON_file_location_path):
     basepath = os.path.dirname(os.path.abspath(SDS_Json_file))
-    full_path = basepath + JSON_file_location_path +"\\"+ SDS_Json_file
+    #full_path = basepath + JSON_file_location_path +"\\"+ SDS_Json_file
+    full_path = basepath + "\\" + SDS_Json_file
     return full_path
 
 def JSON_to_SDS_recommended_mandatory_path_convertors(SDS_path_mandatory):
@@ -63,7 +64,7 @@ def main():
     SDS_Json_file = "dataset_raw_folder_path.json"
     SDS_recommed_mandatory = "recommend_mandatory_and_details_check.json"
     JSON_file_location_path = "\\SDS_grant\\sds_validator"
-    full_path = pathloaders(SDS_Json_file,JSON_file_location_path)
+    full_path = pathloaders(SDS_Json_file, JSON_file_location_path)
     SDS_path = Json_to_folder_path_convertor(full_path)
     full_path_mandatory = pathloaders(SDS_recommed_mandatory, JSON_file_location_path)
     JSON_data = JSON_to_SDS_recommended_mandatory_path_convertors(full_path_mandatory)
