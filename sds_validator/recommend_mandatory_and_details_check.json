@@ -1,0 +1,19 @@
+{
+   "Mandatory_recommended_file_info":{
+      "recommended_files":[
+         "CHANGES",
+         "LICENSE"
+      ],
+      "Mandatory_files":[
+         "dataset_description.json",
+         "README"
+      ],
+      "File_video_data_formats_supported":[
+         ".mp4",
+         ".mpeg",
+         ".avi",
+         ".mkv",
+         ".mov"
+      ]
+   }
+}
