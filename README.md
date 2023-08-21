@@ -14,7 +14,9 @@ Developing a streamlined software for sensor data structure
 
 ## Instructions to Run the code to evaluvate all the rules
 
-# python3 sds_validator_evaluator.py
+```
+python3 sds_validator_evaluator.py
+```
 
 # The output of this running this code is shown as below:
 
