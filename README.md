@@ -12,7 +12,7 @@ Developing a streamlined software for sensor data structure
 6. Each data file should a corresponding JSON file
 7. if the file is under “ses-xxx” directory, the file name must have “ses-xxx” as well
 
-## Instructions to Run the code to evaluvate all the rules
+## Instructions to Run the code to evaluate all the rules
 
 ```
 python3 sds_validator_evaluator.py
