@@ -1,7 +1,7 @@
 # SDS
 Developing a streamlined software for sensor data structure
 ## SDS_Validator 
-# Rules information:
+### Rules information:
 -	Each file satisfies naming requirements
 -	All necessary files exists
 1. Top_level_rules    
@@ -12,13 +12,13 @@ Developing a streamlined software for sensor data structure
 6. Each data file should a corresponding JSON file
 7. if the file is under “ses-xxx” directory, the file name must have “ses-xxx” as well
 
-## Instructions to Run the code to evaluate all the rules
+### Instructions to Run the code to evaluate all the rules
 
 ```
 python3 sds_validator_evaluator.py
 ```
 
-# The output of this running this code is shown as below:
+### The output of this running this code is shown as below:
 
 ```
 ✓ ['top_level_rules'] /dataset_description.json
