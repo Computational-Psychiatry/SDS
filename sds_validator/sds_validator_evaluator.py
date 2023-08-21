@@ -21,10 +21,13 @@ def Json_to_folder_path_convertor(SDS_JSON):
     return raw_folder_path
 
 
-def rulers_Validator(validator,SDS_files,JSON_data):
+def rulers_Validator(validator, SDS_files, JSON_data):
     for SDS_file in SDS_files:
         path = '/' + SDS_file
+        #path = os.path.join(SDS_file)
+        print("the path is:")
         print(path)
+
         passes, satisfies = validator.is_sds_filepath(path, JSON_data)
         if passes:
             status = colorama.Fore.GREEN + '\u2713' + colorama.Fore.RESET
@@ -63,7 +66,8 @@ def file_exists_rules(validator,data,SDS_path):
 def main():
     SDS_Json_file = "dataset_raw_folder_path.json"
     SDS_recommed_mandatory = "recommend_mandatory_and_details_check.json"
-    JSON_file_location_path = "\\SDS_grant\\sds_validator"
+    #JSON_file_location_path = "\\SDS_grant\\sds_validator"
+    JSON_file_location_path = os.path.join("SDS_grant", "sds_validator")
     full_path = pathloaders(SDS_Json_file, JSON_file_location_path)
     print(full_path)
     SDS_path = Json_to_folder_path_convertor(full_path)
