@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Occlusion_rule_model_based_detector/.idea/Occlusion_rule_model_based_detector.iml" filepath="$PROJECT_DIR$/../Occlusion_rule_model_based_detector/.idea/Occlusion_rule_model_based_detector.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SDS_grant.iml" filepath="$PROJECT_DIR$/.idea/SDS_grant.iml" />
     </modules>
   </component>

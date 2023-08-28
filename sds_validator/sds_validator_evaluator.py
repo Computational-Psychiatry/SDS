@@ -2,6 +2,7 @@ import os
 import colorama
 from sds_validator import SDSValidator
 import json
+import argparse
 
 colorama.init()
 
@@ -67,7 +68,8 @@ def main():
     SDS_Json_file = "dataset_raw_folder_path.json"
     SDS_recommed_mandatory = "recommend_mandatory_and_details_check.json"
     #JSON_file_location_path = "\\SDS_grant\\sds_validator"
-    JSON_file_location_path = os.path.join("SDS_grant", "sds_validator")
+    sds_path = argument_parser(argparse.ArgumentParser())
+    JSON_file_location_path = os.path.join(sds_path, "sds_validator")
     full_path = pathloaders(SDS_Json_file, JSON_file_location_path)
     print(full_path)
     SDS_path = Json_to_folder_path_convertor(full_path)
@@ -78,4 +80,22 @@ def main():
     rulers_Validator(validator, SDS_files, JSON_data)
     file_exists_rules(validator, JSON_data, SDS_path)
 
-main()
+def argument_parser(parser):
+
+    """
+
+    argument_parser: This function is used to parse the python command line arguments provided by user input
+
+    :return all information related to inputs passed by the user
+
+    """
+
+    parser.add_argument("--path_sds_folder", help="Add the path to sds folder once cloned",type=str)
+    args = parser.parse_args()
+
+    path_sds_folder = args.path_sds_folder
+
+    return path_sds_folder
+if __name__ == "__main__":
+   main()
+
