@@ -15,7 +15,11 @@ Developing a streamlined software for sensor data structure
 ### Instructions to Run the code to evaluate all the rules
 
 ```
-python3 sds_validator_evaluator.py
+python3 sds_validator_evaluator.py --path_sds_folder "path_to_your_sds_cloned_directory"
+```
+example:
+```
+python3 sds_validator_evaluator.py --path_sds_folder "C:\Users\pargim\PycharmProjects\SDS_grant\"
 ```
 
 ### The output of this running this code is shown as below:
