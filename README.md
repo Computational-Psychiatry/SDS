@@ -1,5 +1,5 @@
-# SDS
-Developing a streamlined software for sensor data structure
+# SDS_Validator(Repository under construction)
+Developing a streamlined software for validation of sensor data structure
 ## SDS_Validator 
 ### Rules information:
 -	Each file satisfies naming requirements
