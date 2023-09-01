@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="747b1363-43b8-473d-af5d-21deb8560c94" name="10.122.154.174">
+        <fileTransfer rootFolder="/home/pargim/occlusion_detection" accessType="SFTP" host="10.122.54.174" port="22" sshConfigId="a9e2edb3-4286-45e1-894f-41da253a7f64" sshConfig="pargim@10.122.54.174:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
