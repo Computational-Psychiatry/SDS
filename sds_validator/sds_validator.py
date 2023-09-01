@@ -4,7 +4,12 @@ import os
 import json
 import warnings
 
-class MandatoryFilenameError(Exception):
+class MandatoryFilenameErrorDatasetDescription(Exception):
+    pass
+
+class MandatoryFilenameErrorReadme(Exception):
+    pass
+class MandatoryFilenamesErrorREADMEandDatasetDescription(Exception):
     pass
 
 class JsonVideoFilenameMismatchError(Exception):
@@ -204,12 +209,30 @@ class SDSValidator():
             return False
 
     def is_recommeded_files(self,recommended_files,list_files):
-        result = all(elem in recommended_files for elem in list_files)
-        if result:
-            return True
+        warnings_recommended = []
+        if recommended_files[0] in list_files:
+            result_dataset_description=True
+            warnings_description_CHANGES = False
         else:
-            warnings.warn("Recommeded files not present")
-            return None
+            warnings_description_CHANGES=True
+        if recommended_files[1] in list_files:
+            result_dataset_description=True
+            warnings_description_LICENSE = False
+        else:
+            warnings_description_LICENSE=True
+            #raise MandatoryFilenameErrorREADME("Mandatory files missing README")
+
+        if warnings_description_CHANGES==True and warnings_description_LICENSE==True:
+            warnings.warn("Recommeded files CHANGES and LICENSE not present")
+            warnings_recommended.append("Recommeded files CHANGES and LICENSE not present")
+        elif warnings_description_CHANGES==True and warnings_description_LICENSE==False:
+            warnings.warn("Recommeded files CHANGES not present")
+            warnings_recommended.append("Recommeded files CHANGES not present")
+        elif warnings_description_CHANGES==False and warnings_description_LICENSE==True:
+            warnings.warn("Recommeded file LICENSE not present")
+            warnings_recommended.append("Recommeded file LICENSE not present")
+
+        return warnings_recommended
 
     def is_file_with_sess_name_containing_sess_dir(self,sds_path,Json_data):
         File_video_data_formats_supported = Json_data["Mandatory_recommended_file_info"][
@@ -239,14 +262,40 @@ class SDSValidator():
             raise SesFolderNameNotPresentInFile("Ses folder name missing in file")
 
     def is_mandatory_files(self,Mandatory_files,list_files):
-        result = all(elem in Mandatory_files for elem in list_files)
-        if result:
-            return True
+        print("the list files are:")
+        print(list_files)
+        print("The mandatory files are:")
+        print(Mandatory_files)
+        Error_Mandatory = []
+
+        if Mandatory_files[0] in list_files:
+            result_dataset_description=True
+            error_dataset_description = False
         else:
-            raise MandatoryFilenameError("Mandatory files missing")
+            error_dataset_description=True
 
-
+            #raise MandatoryFilenameErrorDatasetDescription("Mandatory files missing DatasetDescription.Json")
+        if Mandatory_files[1] in list_files:
+            result_dataset_description=True
+            error_README = False
+        else:
+            error_README=True
+            #raise MandatoryFilenameErrorREADME("Mandatory files missing README")
+        try:
+            if error_README==True and error_dataset_description==True:
+                Error_Mandatory.append("Mandatory files missing README and DatasetDescription")
+                #raise MandatoryFilenamesErrorREADMEandDatasetDescription("Mandatory files missing README and DatasetDescription")
+            elif error_README==True and error_dataset_description==False:
+                Error_Mandatory.append("Mandatory files missing README")
+                #raise MandatoryFilenameErrorReadme("Mandatory files missing README")
+            elif error_README==False and error_dataset_description==True:
+                Error_Mandatory.append("Mandatory files missing datasetdescription.json")
+                #raise MandatoryFilenameErrorDatasetDescription("Mandatory files missing datasetdescription.json")
+        except MandatoryFilenamesErrorREADMEandDatasetDescription or MandatoryFilenameErrorReadme or MandatoryFilenameErrorDatasetDescription as e:
+            print(e)
+        return Error_Mandatory
     def is_file_present_video_and_json(self,sds_path,File_video_data_formats_supported):
+        Error_Json_File_For_video_name_not_present = []
         dir_list = [x[0] for x in os.walk(sds_path)]
         dir_list_of_list = [x.split("\\") for x in dir_list]
         SDS_file_location_directories = ["sdsvideo", "sdsmix", "sdsdepth"] ### currently hardcoded should load from file
@@ -272,18 +321,22 @@ class SDSValidator():
             if number_of_json_files==number_of_video_files:
                 status_video_json_files[list_of_file_directory]=True
             else:
-                raise JsonVideoFilenameMismatchError("Json file corresponding to video not found for"+str(list_of_file_directory))
-
-        return status_video_json_files
+                #raise JsonVideoFilenameMismatchError("Json file corresponding to video not found for"+str(list_of_file_directory))
+                Error_Json_File_For_video_name_not_present.append("Json file corresponding to video not found for"+str(list_of_file_directory))
+        return status_video_json_files, Error_Json_File_For_video_name_not_present
 
 
     def is_file_exists(self,json_data,sds_path):
+        list_files=[]
+        print("sds path here in function")
+        print(sds_path)
         recommended_files = json_data["Mandatory_recommended_file_info"]['recommended_files']
         Mandatory_files = json_data["Mandatory_recommended_file_info"]['Mandatory_files']
         File_video_data_formats_supported = json_data["Mandatory_recommended_file_info"]['File_video_data_formats_supported']
         list_files = [f for f in os.listdir(sds_path) if os.path.isfile(os.path.join(sds_path,f))]
+        print(list_files)
         status_value_recommended = self.is_recommeded_files(recommended_files, list_files)
         status_value_mandatory = self.is_mandatory_files(Mandatory_files, list_files)
-        status_check_file_json_video_present = self.is_file_present_video_and_json(sds_path,File_video_data_formats_supported)
-        return status_value_recommended, status_value_mandatory, status_check_file_json_video_present
+        status_check_file_json_video_present,Error_Json_File_For_video_name_not_present = self.is_file_present_video_and_json(sds_path,File_video_data_formats_supported)
+        return status_value_recommended, status_value_mandatory, status_check_file_json_video_present,Error_Json_File_For_video_name_not_present
 

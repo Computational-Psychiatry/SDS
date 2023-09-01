@@ -1,12 +1,12 @@
 {
    "Mandatory_recommended_file_info":{
       "recommended_files":[
-         "CHANGES",
-         "LICENSE"
+         "CHANGES.txt",
+         "LICENSE.txt"
       ],
       "Mandatory_files":[
          "dataset_description.json",
-         "README"
+         "README.md"
       ],
       "File_video_data_formats_supported":[
          ".mp4",
