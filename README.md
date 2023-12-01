@@ -34,8 +34,6 @@ C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable>python3 main.py -s "
 
 ```
 
- 
-
 #### sdsAssembler -i <path-to-CSV-file> -o <path-to-raw-directory> 
 
 #### Input: <path-to-CSV-file> 
