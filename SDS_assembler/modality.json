@@ -1,0 +1,5 @@
+{
+  "sdsvideo": ["rgb", "rgba", "audio"],
+  "sdsdepth": ["depth"],
+  "sdsmix":["rgbd, rgbad, other"]
+}
