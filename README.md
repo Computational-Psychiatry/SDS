@@ -6,9 +6,9 @@ Developing a File standardization software for sensor data structure
 from SDSAssembler import compileSource, createRaw 
 ## complieSource:
 
-path_to_source_directory: a list including a single directory, or multiple directories 
-path_to_compiled_CSV: where to write the output 
-data = compileSource(path_to_source_directory, path_to_compiled_CSV) 
+#### path_to_source_directory: a list including a single directory, or multiple directories 
+#### path_to_compiled_CSV: where to write the output 
+#### data = compileSource(path_to_source_directory, path_to_compiled_CSV) 
 
 ## createRaw
 ## data: the same CSV in a Pandas DataFrame format  
