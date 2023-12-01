@@ -32,7 +32,7 @@ status: True/False
 ```
 C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable>python3 main.py -s "C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable\SDS_assembler\source_details_doc.txt" -o "C:\\Users\\pargim\\PycharmProjects\\SDS_assembler_as_executable\\SDS_assembler\\testo_new_executable_updated_1.csv"
 ```
-- Creatig raw folder from the CSV filenames containing the details of the source
+- Creating raw folder from the CSV filenames containing the details of the source
 #### sdsAssembler -i path-to-CSV-file -o path-to-raw-directory 
 
 #### Input: path-to-CSV-file
