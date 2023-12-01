@@ -9,16 +9,16 @@ from SDSAssembler import compileSource, createRaw
 ### compile source 
 #### path_to_source_directory: a list including a single directory, or multiple directories 
 #### path_to_compiled_CSV: where to write the output 
+
 ```python
 data = compileSource(path_to_source_directory, path_to_compiled_CSV)
-
 ```
-
 
 ## createRaw
 #### data: the same CSV in a Pandas DataFrame format  
 #### input: either path_to_compiled_CSV or data (Pandas DataFrame) 
 #### path_to_raw_directory: where to create Raw. You will create a raw directory, if it is not already there. You will create empty README and dataset_description.JSON files, if there are not already there. For all other files (video, JSON, etc.) you can overwrite.  
+
 ```python
 status = createRaw(input, path_to_raw_directory) 
 status: True/False 
@@ -52,12 +52,13 @@ from SDSValidator import validateFile, validateDirectory
 ```
 - ### Input : path_to_a_single_file(relative to Raw root) 
 
-# message: warning or error message; None if it is successful  
 ```python
 status, message = validateFile(path_to_a_single_file) 
 status: True/False
 {filename:message}
 ```
+#### output {message: warning or error message; None if it is successful}  
+
 - ### Input : path_to_raw_root_directory
 
 #### message: warning or error messages for all directories and files(Dictionary) 
