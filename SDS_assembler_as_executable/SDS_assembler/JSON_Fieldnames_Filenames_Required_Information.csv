@@ -1,0 +1,11 @@
+﻿Field name in JSON,Field name in file name,Required in JSON?,Notes
+Subject,sub,mandatory,
+Session,ses,optional,Numeric value
+Task,Acquisition,mandatory,
+Condition,task,optional,
+Target,tgt,optional,
+Run,run,optional,Numeric value
+Device,dev,optional,
+Channel,chn,optional,
+Modality,"rgb, rgba, rgbd, rgbad, depth, audio, other",mandatory,Must be one of the followings:
+,,,"rgb, rgba, audio, depth, rgbd, rgbad, other"

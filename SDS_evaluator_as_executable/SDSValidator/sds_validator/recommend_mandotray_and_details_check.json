@@ -1,0 +1,5 @@
+{
+{"recommended_files":["CHANGES","LICENSE"]},
+{"Mandatory_files":["dataset_description.json","README"]},
+{"File_comparision_video_data":[".mp4",".mpeg",".avi",".mkv",".mov]}
+}
