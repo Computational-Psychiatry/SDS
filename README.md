@@ -1,7 +1,7 @@
 # SDS
 Developing a File standardization software for sensor data structure
 
-## SDS_Assembler_as_library(Description)
+## SDS_Assembler_as_library
 
 from SDSAssembler import compileSource, createRaw 
 ## compileSource:
