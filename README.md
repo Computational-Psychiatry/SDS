@@ -47,27 +47,53 @@ C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable>python3 main.py --s 
 
 ## SDS_Validator_as_Library
 
+```python
 from SDSValidator import validateFile, validateDirectory 
-
- 
-
-# path_to_a_single_file: relative to Raw root 
-
-# status: True/False 
+```
+- ### Input : path_to_a_single_file(relative to Raw root) 
 
 # message: warning or error message; None if it is successful  
-
+```python
 status, message = validateFile(path_to_a_single_file) 
+status: True/False
+{filename:message}
+```
+- ### Input : path_to_raw_root_directory
 
- 
-
-# status: True/False 
-
-# message: warning or error messages for all directories and files. Dictionary 
-
+# message: warning or error messages for all directories and files(Dictionary) 
 # {filename: message} 
-
 # None if all are successful 
+```python
+status, messages = validateDirectory(path_to_raw_root) 
+``` 
+## SDS_Validator_as_Executable
+
+### - sdsValidator -f path-to-a-single-file [-o path-to-output-file] 
+
+#### Input: <path-to-a-single-file>, a single video or audio file. Program checks for file-level-rule. The path has to be given relative to Raw root 
+
+#### Output: True/False, whether it satisfies the rules or not 
+
+#### OPTIONAL: if -o is used, write messages to the file  
+
+```Python
+(base) C:\Users\pargim\PycharmProjects\SDS_evaluator_as_executable>python3 main.py -f "C:\\Users\\pargim\\PycharmProjects\\SDS_evaluator_as_library\\20230628_example_SDS\\raw\\sub-ACES007\\ses-1\\sdsvideo\\sub-ACES007_ses-1_task-CASS_cnd-Bored_tgt-Participant_run-2_dev-goProHero11Black_rgba.mp4" -o "C:\\Users\\pargim\\PycharmProjects\\test_validator_outcome_exe_single_file_1.txt"
+```
+
  
 
+### - sdsValidator -d path-to-raw-root [-o path-to-output-file] 
+
+#### Input: <path-to-raw-root> 
+
+#### Output: True/False, whether all directories and files satisfy all rules or not. Also print warnings and errors (but not success). 
+
+#### <File or directory name> : <warning or error message> 
+
+#### OPTIONAL: if -o is used, write messages to the file  
+
+```Python
+(base) C:\Users\pargim\PycharmProjects\SDS_evaluator_as_executable>python3 main.py -d "C:\\Users\\pargim\\PycharmProjects\\SDS_evaluator_as_library\\20230628_example_SDS\\raw\\" -o "C:\\Users\\pargim\\PycharmProjects\\test_validator_outcome_exe_1.txt"
+```
+ 
 
