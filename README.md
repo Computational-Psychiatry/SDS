@@ -2,8 +2,9 @@
 Developing a file name standard for sensor data structure
 
 ## SDS_Assembler_as_library
-
+```python
 from SDSAssembler import compileSource, createRaw 
+```
 ## compileSource:
 ### compile source 
 #### path_to_source_directory: a list including a single directory, or multiple directories 
@@ -44,6 +45,29 @@ C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable>python3 main.py --s 
 
 ```
 
+## SDS_Validator_as_Library
+
+from SDSValidator import validateFile, validateDirectory 
+
+ 
+
+# path_to_a_single_file: relative to Raw root 
+
+# status: True/False 
+
+# message: warning or error message; None if it is successful  
+
+status, message = validateFile(path_to_a_single_file) 
+
+ 
+
+# status: True/False 
+
+# message: warning or error messages for all directories and files. Dictionary 
+
+# {filename: message} 
+
+# None if all are successful 
  
 
 
