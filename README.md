@@ -60,9 +60,9 @@ status: True/False
 ```
 - ### Input : path_to_raw_root_directory
 
-# message: warning or error messages for all directories and files(Dictionary) 
-# {filename: message} 
-# None if all are successful 
+#### message: warning or error messages for all directories and files(Dictionary) 
+#### {filename: message} 
+#### None if all are successful 
 ```python
 status, messages = validateDirectory(path_to_raw_root) 
 ``` 
