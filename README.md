@@ -1,5 +1,5 @@
 # SDS
-Developing a File standardization software for sensor data structure
+Developing a file name standard for sensor data structure
 
 ## SDS_Assembler_as_library
 
