@@ -24,19 +24,23 @@ status: True/False
 ```
 
 ## SDS_Assembler_as_executable
+#### + For creating CSV containing all details of JSON Fieldnames of all source files
 
-#### sdsAssembler -s <path-to-source-directory> -o <path-to-CSV-file> 
+#### sdsAssembler -s <path-to-source-directory-text-file> -o <path-to-CSV-file> 
 #### Input: <path-to-directory-list-file>, a simple text file including source directories, each in a separate line 
 #### Output: <path-to-CSV-file> : It creates a CSV file compiling all available video/audio files 
 ```
 C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable>python3 main.py -s "C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable\SDS_assembler\source_details_doc.txt" -o "C:\\Users\\pargim\\PycharmProjects\\SDS_assembler_as_executable\\SDS_assembler\\testo_new_executable_updated_1.csv"
 ```
-
+#### + For creatig raw folder from the CSV filenames containing the details of the source
 #### sdsAssembler -i <path-to-CSV-file> -o <path-to-raw-directory> 
-
 #### Input: <path-to-CSV-file> 
-
 #### Output: <path-to-raw-directory> You will create a raw directory, if it is not already there. You will create empty README and dataset_description.JSON files, if there are not already there. For all other files (video, JSON, etc.) you can overwrite.  
+
+```
+C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable>python3 main.py --s "C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable\SDS_assembler\source_details_doc.txt" --o "C:\\Users\\pargim\\PycharmProjects\\SDS_assembler_as_executable\\SDS_assembler\\testo_new_executable_updated_1.csv"
+
+```
 
  
 
