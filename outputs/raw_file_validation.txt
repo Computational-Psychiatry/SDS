@@ -1,0 +1,2 @@
+False
+[[[{'C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables\\20230628_example_SDS\\raw\\sub-ACES007\\ses-1\\sdsvideo\\sub-ACES007_ses-1_task-CASS_cnd-Bored_tgt-Participant_run-2_dev-goProHero11Black_rgba.mp4': 'Json not found for this video file'}], [{'README and datasetdescrption.json': 'Mandatory files missing'}], [{'CHANGES and LICENSE files': 'Recommended files not present'}]]]
