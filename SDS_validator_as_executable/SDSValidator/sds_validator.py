@@ -41,7 +41,7 @@ class SDSValidatorTest():
         """
         #self.dir_rules = os.path.join(os.path.dirname(__file__)) + "/rules/"
         #self.dir_rules = "SDSValidator\\rules/"
-        self.dir_rules = os.path.join("SDSValidator","rules\\")
+        self.dir_rules = os.path.join("SDSValidator","rules")
         self.index_associated = index_associated
 
 
@@ -116,8 +116,7 @@ class SDSValidatorTest():
 
     def is_top_level(self, path):
         """Check if the file has appropriate name for a top-level file."""
-        regexps = self.get_regular_expressions(self.dir_rules +
-                                               'top_level_rules.json')
+        regexps = self.get_regular_expressions(os.path.join(self.dir_rules,'top_level_rules.json'))
 
         conditions = [False if re.compile(x).search(path) is None else True for
                       x in regexps]
@@ -129,8 +128,7 @@ class SDSValidatorTest():
         if not self.index_associated:
             return False
 
-        regexps = self.get_regular_expressions(self.dir_rules +
-                                               'associated_data_rules.json')
+        regexps = self.get_regular_expressions(os.path.join(self.dir_rules,'associated_data_rules.json'))
 
         conditions = [(re.compile(x).search(path) is not None) for
                       x in regexps]
@@ -139,8 +137,7 @@ class SDSValidatorTest():
 
     def is_session_level(self, path):
         """Check if the file has appropriate name for a session level."""
-        regexps = self.get_regular_expressions(self.dir_rules +
-                                               'session_level_rules.json')
+        regexps = self.get_regular_expressions(os.path.join(self.dir_rules,'session_level_rules.json'))
 
         conditions = [self.conditional_match(x, path) for x in regexps]
 
@@ -148,8 +145,7 @@ class SDSValidatorTest():
 
     def is_subject_level(self, path):
         """Check if the file has appropriate name for a subject level."""
-        regexps = self.get_regular_expressions(self.dir_rules +
-                                               'subject_level_rules.json')
+        regexps = self.get_regular_expressions(os.path.join(self.dir_rules,'subject_level_rules.json'))
 
         conditions = [(re.compile(x).search(path) is not None) for
                       x in regexps]
@@ -158,8 +154,7 @@ class SDSValidatorTest():
 
     def is_phenotypic(self, path):
         """Check if file is phenotypic data."""
-        regexps = self.get_regular_expressions(self.dir_rules +
-                                               'phenotypic_rules.json')
+        regexps = self.get_regular_expressions(os.path.join(self.dir_rules,'phenotypic_rules.json'))
 
         conditions = [(re.compile(x).search(path) is not None) for
                       x in regexps]
@@ -168,8 +163,7 @@ class SDSValidatorTest():
 
     def is_file(self, path):
         """Check if file is phenotypic data."""
-        regexps = self.get_regular_expressions(self.dir_rules +
-                                               'file_level_rules.json')
+        regexps = self.get_regular_expressions(os.path.join(self.dir_rules,'file_level_rules.json'))
 
         conditions = [(re.compile(x).search(path) is not None) for
                       x in regexps]
