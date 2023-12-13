@@ -1,6 +1,6 @@
 import os
-import colorama
 from SDS_validator_as_library.SDSValidator.sds_validator import SDSValidatorTest
+import colorama
 import json
 import argparse
 
