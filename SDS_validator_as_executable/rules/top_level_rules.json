@@ -1,0 +1,22 @@
+{
+  "root_top": {
+    "regexp": "^[\\/\\\\]?(@@@_root_files_@@@)$",
+    "tokens": {
+      "@@@_root_files_@@@": [
+        "README",
+        "README\\.md",
+        "README\\.rst",
+        "README\\.txt",
+        "CHANGES",
+        "LICENSE",
+        "dataset_description\\.json",
+        "participants\\.tsv",
+        "participants\\.json",
+        "events\\.json",
+        "scans\\.json",
+        "samples\\.json",
+        "samples\\.tsv"
+      ]
+    }
+  }
+}

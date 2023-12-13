@@ -1,0 +1,45 @@
+{
+  "sdsvideo": {
+    "regexp": "^[\\/\\\\](sub-[a-zA-Z0-9]+)[\\/\\\\](?:(ses-[a-zA-Z0-9]+)[\\/\\\\])?sdsvideo[\\/\\\\]\\1(_\\2)?_task-[a-zA-Z0-9]+(?:_cnd-[a-zA-Z0-9]+)?(?:_tgt-[a-zA-Z0-9]+)?(?:_run-[0-9]+)?(?:_dev-[a-zA-Z0-9]+)?(?:_chn-[a-zA-Z0-9]+)?(?:@@@_sdsvideo_ext_@@@)$",
+    "tokens": {
+      "@@@_sdsvideo_ext_@@@": [
+        "_rgb\\.(mp4|mpeg|avi|mkv|mov)",
+        "_rgb\\.json",
+        "_rgba\\.(mp4|mpeg|avi|mkv|mov)",
+        "_rgba\\.json",
+        "_audio\\.(mp3|wav|aac|ogg|flac|m4a|aiff)",
+        "_audio\\.json",
+        "_events\\.tsv",
+        "_events\\.json"
+      ]
+    }
+  },
+  
+  "sdsmix": {
+    "regexp": "^[\\/\\\\](sub-[a-zA-Z0-9]+)[\\/\\\\](?:(ses-[a-zA-Z0-9]+)[\\/\\\\])?sdsmix[\\/\\\\]\\1(_\\2)?_task-[a-zA-Z0-9]+(?:_cnd-[a-zA-Z0-9]+)?(?:_tgt-[a-zA-Z0-9]+)?(?:_run-[0-9]+)?(?:_dev-[a-zA-Z0-9]+)?(?:_chn-[a-zA-Z0-9]+)?(?:@@@_sdsvideo_ext_@@@)$",
+    "tokens": {
+      "@@@_sdsvideo_ext_@@@": [
+        "_rgbd\\.(bin|mp4|mpeg|avi|mkv|mov)",
+        "_rgbd\\.json",
+        "_rgbad\\.(bin|mp4|mpeg|avi|mkv|mov)",
+        "_rgbad\\.json",
+        "_other\\.(bin|mp4|mpeg|avi|mkv|mov)",
+        "_other\\.json",
+        "_events\\.tsv",
+        "_events\\.json"
+      ]
+    }
+  },
+  
+  "sdsdepth": {
+    "regexp": "^[\\/\\\\](sub-[a-zA-Z0-9]+)[\\/\\\\](?:(ses-[a-zA-Z0-9]+)[\\/\\\\])?sdsdepth[\\/\\\\]\\1(_\\2)?_task-[a-zA-Z0-9]+(?:_cnd-[a-zA-Z0-9]+)?(?:_tgt-[a-zA-Z0-9]+)?(?:_run-[0-9]+)?(?:_dev-[a-zA-Z0-9]+)?(?:_chn-[a-zA-Z0-9]+)?(?:@@@_sdsvideo_ext_@@@)$",
+    "tokens": {
+      "@@@_sdsvideo_ext_@@@": [
+        "_depth\\.(bin|mp4|mpeg|avi|mkv|mov)",
+        "_depth\\.json",
+        "_events\\.tsv",
+        "_events\\.json"
+      ]
+    }
+  }
+}
