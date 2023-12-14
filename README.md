@@ -1,1 +1,1 @@
-## SDS(Sensor Data Strcuture)(####Add description by John)
+#### SDS(Sensor Data Strcuture)
