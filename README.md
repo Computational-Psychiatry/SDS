@@ -54,6 +54,8 @@ status = createRaw(input, path_to_raw_directory)
 status: True/False 
 
 ```
+outputs: provide the path to save the raw folder in the outputs
+
 
 #### SDS_Assembler_as_executable
 - Creating CSV containing all details of JSON Fieldnames of all source files
