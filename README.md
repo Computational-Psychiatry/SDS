@@ -2,6 +2,13 @@
 Description to be added by John
 Developing a file name standard for sensor data structure
 
+
+### Table of contents: 
+1. [Requirements](#requirements)
+2. [Installation](#installation)
+3. [SDS validator and Assembler](#running-the-code)
+4. [Docker setup](#Docker setup)
+
 Pre-requisties:
 Installation of python version 
 
