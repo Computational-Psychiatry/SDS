@@ -136,6 +136,45 @@ status, messages = validateDirectory(path_to_raw_root)
 ```Python
 (base) C:\Users\pargim\PycharmProjects\SDS_evaluator_as_executable>python3 main.py -d "C:\\Users\\pargim\\PycharmProjects\\SDS_evaluator_as_library\\20230628_example_SDS\\raw\\" -o "C:\\Users\\pargim\\PycharmProjects\\test_validator_outcome_exe_1.txt"
 ```
+## Docker
+#### Install of docker:
+https://docs.docker.com/get-docker/
+https://docs.docker.com/engine/install/
+https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-use-docker
+
+## SDS_docker_contariner located on docker_hub:
+create an account on docker hub(provide link)
+Use the command to pull docker image:
+docker pull 7090496133/sds_format_generator:version
+https://hub.docker.com/repository/docker/7090496133/sds_format_generator/general
+https://hub.docker.com/repository/docker/7090496133/sds_format_generator/tags?page=1&ordering=last_updated
+
+### Instructions to run docker on our server(ws03):
+1. systemctl restart docker
+2. docker ps -a(to view all the docker images)
+3. docker start sds_container (docker starting of the image instance)
+b)           docker exec -it sds_container bash(This command will take you inside the docker container)
+Insider the docker container:
+c)            Running of SDS_assembler_as_exceutable(root@ba8fd8ab4a84:/home/SDS/SDS_assembler_as_executable# python3 main.py --s "/home/SDS/source_details_doc.txt" --o "/home/SDS/outputs/source_test_exe_1.csv"):
+1. cd /home/SDS/SDS_assembler_as_executable
+2. python3 main.py --s "/home/SDS/source_details_doc.txt" --o "/home/SDS/outputs/source_test_exe_1.csv"
+d)           Running of SDS_validator_as_exceutable(root@ba8fd8ab4a84:/home/SDS/SDS_assembler_as_executable# python3 main.py -d "/home/SDS/outputs/raw/" -o "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"):
+1. cd /home/SDS/SDS_validator_as_executable
+2. python3 main.py -d "/home/SDS/outputs/raw/" -o "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"  
+
+
+Instructions to run on other linux machine or macos:
+a) Create an account on dockerhub
+b) docker pull 7090496133/sds_format_generator:version
+c) docker run -it 7090496133/sds_format_generator:version 
+d) docker run -it <mynewimage:latest> 7090496133/sds_format_generator:version
+e) exit out of docker using exit command
+f) docker exec -it <mynewimage:latest> bash
+
+Same instructions
+
+docker start 
+
 
 
 
