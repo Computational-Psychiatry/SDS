@@ -1,0 +1,12 @@
+Install of docker:
+https://docs.docker.com/get-docker/
+https://docs.docker.com/engine/install/
+https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-use-docker
+
+SDS_docker_contariner located on docker_hub:
+Use the command to pull docker image:
+docker pull 7090496133/sds_format_generator:version
+
+
+https://hub.docker.com/repository/docker/7090496133/sds_format_generator/general
+https://hub.docker.com/repository/docker/7090496133/sds_format_generator/tags?page=1&ordering=last_updated
