@@ -41,7 +41,7 @@ class SDSValidatorTest():
         """
         #self.dir_rules = os.path.join(os.path.dirname(__file__)) + "/rules/"
         #self.dir_rules = "SDSValidator\\rules/"
-        self.dir_rules = os.path.join(os.getcwd(),"rules")
+        self.dir_rules = os.path.join(os.getcwd(), "rules")
         self.index_associated = index_associated
 
 
