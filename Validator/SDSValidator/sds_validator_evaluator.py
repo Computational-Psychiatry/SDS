@@ -48,7 +48,7 @@ def rules_validator_single_file(validator, single_file, JSON_data):
     print("JSON data")
     print(JSON_data)
     #k = single_file.split("\\")
-    if len(single_file.split("\\"))!=0:
+    if len(single_file.split("\\"))>1:
         test = ""
         count = 0
         test_dict = {}
@@ -62,7 +62,7 @@ def rules_validator_single_file(validator, single_file, JSON_data):
                 test = test + key + "\\"
         print("test in boolean single file")
         print(test)
-    elif len(single_file.split("/"))!=0:
+    elif len(single_file.split("/"))>1:
         test = ""
         count = 0
         test_dict = {}
