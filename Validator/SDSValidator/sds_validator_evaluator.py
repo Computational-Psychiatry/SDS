@@ -24,8 +24,10 @@ def rulers_Validator(validator, SDS_files, JSON_data):
     print("The SDS_files are")
     print(SDS_files)
     for SDS_file in SDS_files:
-        #path = '/' + SDS_file
-        path = os.path.join("\\",SDS_file)
+        if len(SDS_file.split("\\"))!=0:
+            path = os.path.join("\\",SDS_file)
+        else:
+            path = '/' + SDS_file
         print("The paths are in boolean:")
         print(path)
         passes, satisfies = validator.is_sds_filepath(path, JSON_data)
@@ -46,21 +48,34 @@ def rules_validator_single_file(validator, single_file, JSON_data):
     print("JSON data")
     print(JSON_data)
     k = single_file.split("\\")
-    test = ""
-    count = 0
-    test_dict = {}
-    for file_val in k:
-        test_dict[file_val] = count
-        count = count + 1
-    count_value = test_dict["raw"]
-    for key, value in test_dict.items():
-        if test_dict[key] > count_value:
-            test = test + key + "\\"
-    print("test in boolean single file")
-    print(test)
+    if len(single_file.split("\\"))!=0:
+        test = ""
+        count = 0
+        test_dict = {}
+        for file_val in k:
+            test_dict[file_val] = count
+            count = count + 1
+        count_value = test_dict["raw"]
+        for key, value in test_dict.items():
+            if test_dict[key] > count_value:
+                test = test + key + "\\"
+        print("test in boolean single file")
+        print(test)
+    else:
+        test = ""
+        count = 0
+        test_dict = {}
+        for file_val in k:
+            test_dict[file_val] = count
+            count = count + 1
+        count_value = test_dict["raw"]
+        for key, value in test_dict.items():
+            if test_dict[key] > count_value:
+                test = test + key + "\\"
+        print("test in boolean single file")
+        print(test)
 
     passes, satisfies = validator.is_sds_filepath("/"+test[0:-1], JSON_data)
-    #passes, satisfies = validator.is_sds_filepath(single_file, JSON_data)
     if passes:
         status = colorama.Fore.GREEN + '\u2713' + colorama.Fore.RESET
         status_boolean = 1
