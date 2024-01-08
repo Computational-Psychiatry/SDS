@@ -88,6 +88,31 @@ Inputs and outputs for running on command line:
 a) -s : specify the path of source folder in a text file
 b) -o : specify the path of output complied csv
 
+### B) To create raw folder structure from the complied csv source files:
+
+### createRaw:
+Input: path_to_complied_csv
+Output: path_to_raw_folder
+
+1. Change directory to Assembler 
+2. Provide Source directory path in the main_assembler_as_executable.py
+3. Provide the path of the compiled csv in the main_assembler_executable.py
+
+
+```python
+
+on windows:
+
+###To generate raw from csv
+(base) C:\Users\pargim\PycharmProjects\All_SDS_libraries_and_executables\SDS_assembler_as_executable>python3 main_assembler_executable.py -i "C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables_updated\\sample_outputs\\source_test.csv" -o "C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables_updated\\sample_outputs\\raw"
+
+on linux:
+###  
+
+
+```
+
+
 
 
 
