@@ -10,7 +10,8 @@ Developing a file name standard for sensor data structure
 4. [Docker setup](#Docker setup)
 
 Pre-requisties:
-Installation of python version 
+Python3(Required)
+Docker(optional)
 
 #### General instructions:
 1. pip install -r requirmenets_updated.txt
