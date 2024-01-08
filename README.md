@@ -4,87 +4,94 @@ Developing a file name standard for sensor data structure
 
 
 ### Table of contents: 
-1. [Requirements](#requirements)
-2. [Installation](#installation)
-3. [SDS validator and Assembler](#running-the-code)
-4. [Docker setup](#Docker setup)
+1. [General Instructions](#requirements)
+2. [Assembler](#Assembler)
+3. [Validator](#Validator)
+4. [Docker setup](#Docker)
 
-Pre-requisties:
+### Pre-requisties:
 Python3(Required)
 Docker(optional)
 
 #### General instructions:
-1. pip install -r requirmenets_updated.txt
-2. The sample dataset is located in the source directory
-3. All the outputs could be stored in the output directory
-
+1. pip install -r requirments.txt
+2. The sample dataset is located in the sample_test_dataset directory
+3. All the outputs are stored in the sample_outputs directory
 
 #### Sensor Data strcuture instructions to run the Assembler and Validator
 
-## SDS_Assembler_as_library
+## Assembler
+
+Assembler converts a source folder to the raw directory format. There are two main steps involved:
+
+a) Converting the source folder to a csv format. This CSV contains all the details of the source folder.
+b) Generating the raw folder structure from the Complied csv. 
+
+A sample source directory is provided in sample_test_dataset. 
+The sample outputs for complied csv and raw folder structure is provided in sample_outputs directory.
+
+### Assembler as library
+
 ```python
-from SDSAssembler import compileSource, createRaw 
+from SDS_Assembler import compileSource, createRaw 
 ```
-Steps to compile source:
-Part_1:
-1. Change directory to SDS_Assembler_as_library 
-2. Provide Source directory path
-3. Provide the path of the complied csv
 
-## compileSource:
+### A) Steps to capture all source directory details into a complied csv:
 
-### compile source 
-#### path_to_source_directory: path to source directory
-#### path_to_compiled_CSV: where to write the output 
+#### compileSource:
+Input :path_to_source_directory
+Output: path_to_compiled_csv
+
+1. Change directory to Assembler 
+2. Provide Source directory path in the main_assembler_library.py
+3. Provide the path of the compiled csv in the main_assembler_library.py
 
 ```python
-
 data = compileSource(path_to_source_directory, path_to_compiled_CSV)
-
 ```
 
-The complied csv file is located in the output folder
+### B) To create raw folder structure from the complied csv source files:
 
-Step2: To create raw folder structure from the complied csv source files
+### createRaw:
+Input: path_to_complied_csv
+Output: path_to_raw_folder
 
-Part_2:
 1. Provide the path for complied csv 
 2. Provide path for the creation of the raw folder
 
-## createRaw
-#### data: the same CSV in a Pandas DataFrame format  
-#### input: either path_to_compiled_CSV or data (Pandas DataFrame) 
-#### path_to_raw_directory: where to create Raw. You will create a raw directory, if it is not already there. You will create empty README and dataset_description.JSON files, if there are not already there. For all other files (video, JSON, etc.) you can overwrite.  
-
 ```python
-
 status = createRaw(input, path_to_raw_directory) 
 status: True/False 
+```
+### Assembler as executable
+
+### A) Steps to capture all source directory details into a complied csv:
+
+#### compileSource:
+Input :path_to_source_directory
+Output: path_to_compiled_csv
+
+1. Change directory to Assembler 
+2. Provide Source directory path in the main_assembler_as_executable.py
+3. Provide the path of the compiled csv in the main_assembler_executable.py
 
 ```
-outputs: provide the path to save the raw folder in the outputs
+Example Windows os:
 
+C:\Users\pargim\PycharmProjects\All_SDS_libraries_and_executables\SDS_assembler_as_executable>python3 main_assembler_executable.py -s "C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables_updated\\sample_test_dataset\\source_details_doc.txt" --o "C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables_updated\\sample_outputs\\source_test.csv
 
-#### SDS_Assembler_as_executable
-- Creating CSV containing all details of JSON Fieldnames of all source files
+Example Linux os:
 
-#### sdsAssembler -s path-to-source-directory-text-file -o path-to-CSV-file 
-#### Input: Path-to-directory-in-a-text-file-containing-source-folder-locations, a simple text file including source directories, each in a separate line 
-#### Output: Path-to-CSV-file : It creates a CSV file compiling all available video/audio files 
+/home/SDS/SDS_assembler_as_executable# python3 main.py -s "/home/SDS/source_details_doc.txt" -o "/home/SDS/outputs/source_test.csv"
 ```
-C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable>python3 main.py -s "C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable\SDS_assembler\source_details_doc.txt" -o "C:\\Users\\pargim\\PycharmProjects\\SDS_assembler_as_executable\\SDS_assembler\\testo_new_executable_updated_1.csv"
-```
-- Creating raw folder from the CSV filenames containing the details of the source
-#### sdsAssembler -i path-to-CSV-file -o path-to-raw-directory 
+Inputs and outputs for running on command line:
 
-#### Input: path-to-CSV-file
+-s : specify the path of source folder in a text file
+-o : specify the path of output complied csv
 
-#### Output: <path-to-raw-directory> You will create a raw directory, if it is not already there. You will create empty README and dataset_description.JSON files, if there are not already there. For all other files (video, JSON, etc.) you can overwrite.  
 
-```
-C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable>python3 main.py --s "C:\Users\pargim\PycharmProjects\SDS_assembler_as_executable\SDS_assembler\source_details_doc.txt" --o "C:\\Users\\pargim\\PycharmProjects\\SDS_assembler_as_executable\\SDS_assembler\\testo_new_executable_updated_1.csv"
 
-```
+
 
 ## SDS_Validator_as_Library
 
