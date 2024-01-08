@@ -47,11 +47,26 @@ def rules_validator_single_file(validator, single_file, JSON_data):
     print(single_file)
     print("JSON data")
     print(JSON_data)
-    k = single_file.split("\\")
+    #k = single_file.split("\\")
     if len(single_file.split("\\"))!=0:
         test = ""
         count = 0
         test_dict = {}
+        k = single_file.split("\\")
+        for file_val in k:
+            test_dict[file_val] = count
+            count = count + 1
+        count_value = test_dict["raw"]
+        for key, value in test_dict.items():
+            if test_dict[key] > count_value:
+                test = test + key + "\\"
+        print("test in boolean single file")
+        print(test)
+    elif len(single_file.split("/"))!=0:
+        test = ""
+        count = 0
+        test_dict = {}
+        k = single_file.split("/")
         for file_val in k:
             test_dict[file_val] = count
             count = count + 1
@@ -62,19 +77,7 @@ def rules_validator_single_file(validator, single_file, JSON_data):
         print("test in boolean single file")
         print(test)
     else:
-        test = ""
-        count = 0
-        test_dict = {}
-        for file_val in k:
-            test_dict[file_val] = count
-            count = count + 1
-        count_value = test_dict["raw"]
-        for key, value in test_dict.items():
-            if test_dict[key] > count_value:
-                test = test + key + "\\"
-        print("test in boolean single file")
-        print(test)
-
+        pass
     passes, satisfies = validator.is_sds_filepath("/"+test[0:-1], JSON_data)
     if passes:
         status = colorama.Fore.GREEN + '\u2713' + colorama.Fore.RESET
