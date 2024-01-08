@@ -85,9 +85,8 @@ Example Linux os:
 /home/SDS/SDS_assembler_as_executable# python3 main.py -s "/home/SDS/source_details_doc.txt" -o "/home/SDS/outputs/source_test.csv"
 ```
 Inputs and outputs for running on command line:
-
--s : specify the path of source folder in a text file
--o : specify the path of output complied csv
+a) -s : specify the path of source folder in a text file
+b) -o : specify the path of output complied csv
 
 
 
