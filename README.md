@@ -49,7 +49,7 @@ from SDS_Assembler import compileSource, createRaw
 Input :path_to_source_directory
 Output: path_to_compiled_csv
 
-* Change directory to Assembler(cd Assembler)
+* Change directory to Assembler as library(cd Assembler)
 * Provide Source directory path in the main_assembler_library.py
 * Provide the path of the compiled csv in the main_assembler_library.py
 
@@ -70,15 +70,14 @@ status: True/False
 ```
 ### Assembler as executable
 
-### A) Steps to capture all source directory details into a complied csv:
 
 #### compileSource:
 Input :path_to_source_directory
 Output: path_to_compiled_csv
 
-1. Change directory to Assembler 
-2. Provide Source directory path in the main_assembler_as_executable.py
-3. Provide the path of the compiled csv in the main_assembler_executable.py
+* Change directory to Assembler as executable 
+* Provide Source directory path in the main_assembler_as_executable.py
+* Provide the path of the compiled csv in the main_assembler_executable.py
 
 ```
 Example Windows os:
