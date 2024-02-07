@@ -16,15 +16,14 @@
 
 
 ## General instructions:
-### Pre-requisties:
+#### Pre-requisties:
 * Python3(Required)
 * Docker(optional)
-### Installation and Basic information 
+#### Installation and Basic information 
 * pip install -r requirments.txt
 * The sample dataset is located in the sample_test_dataset directory
 * All the outputs are stored in the sample_outputs directory
 
-#### Sensor Data strcuture instructions to run the Assembler and Validator
 
 ## Assembler
 
