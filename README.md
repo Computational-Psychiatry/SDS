@@ -27,13 +27,14 @@
 
 ## Assembler
 
-Assembler converts a source folder to the raw directory format. There are two main steps involved:
+<p>Assembler converts a source folder to the raw directory format.<br> 
+There are two main steps involved:</p>
 
-a) Converting the source folder to a csv format. This CSV contains all the details of the source folder.
-b) Generating the raw folder structure from the Complied csv. 
+* Converting the source folder to a csv format. This CSV contains all the details of the source folder.
+* Generating the raw folder structure from the Complied csv. 
 
-A sample source directory is provided in sample_test_dataset. 
-The sample outputs for complied csv and raw folder structure is provided in sample_outputs directory.
+* A sample source directory is provided in sample_test_dataset. 
+* The sample outputs for complied csv and raw folder structure is provided in sample_outputs directory.
 
 ### Assembler as library
 
