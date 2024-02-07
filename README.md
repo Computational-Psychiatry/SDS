@@ -35,7 +35,7 @@ There are two main steps involved:</p>
 * **compileSource** : Converting the source folder to a csv format. This CSV contains all the details of the source folder.
 * **createRaw** : Generating the raw folder structure from the Complied csv. 
 
-#### Details of sample source dataset and compiled csv outputs
+#### Details of sample source dataset and sample compiled csv outputs
 * A sample source directory is provided in sample_test_dataset. 
 * The sample outputs for complied csv and raw folder structure is provided in sample_outputs directory.
 
