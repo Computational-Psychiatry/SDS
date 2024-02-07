@@ -49,9 +49,9 @@ from SDS_Assembler import compileSource, createRaw
 Input :path_to_source_directory
 Output: path_to_compiled_csv
 
-1. Change directory to Assembler 
-2. Provide Source directory path in the main_assembler_library.py
-3. Provide the path of the compiled csv in the main_assembler_library.py
+* Change directory to Assembler(cd Assembler)
+* Provide Source directory path in the main_assembler_library.py
+* Provide the path of the compiled csv in the main_assembler_library.py
 
 ```python
 data = compileSource(path_to_source_directory, path_to_compiled_CSV)
@@ -61,8 +61,8 @@ data = compileSource(path_to_source_directory, path_to_compiled_CSV)
 Input: path_to_complied_csv
 Output: path_to_raw_folder
 
-1. Provide the path for complied csv 
-2. Provide path for the creation of the raw folder
+* Provide the path for complied csv 
+* Provide path for the creation of the raw folder
 
 ```python
 status = createRaw(input, path_to_raw_directory) 
