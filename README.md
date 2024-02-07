@@ -1,6 +1,10 @@
-#### SDS - (Sensor Data Strcuture)
-Description to be added by John
-Developing a file name standard for sensor data structure
+# SDS
+
+SDS is a Python library for developing and validating a filename standards for raw video files:
+It consists of two main components:
+Assembler : Creating standardized dervied filenames from raw files using json metadata information
+Validator :  Validating dervied filenames for any anamolies.
+
 
 
 ### Table of contents: 
