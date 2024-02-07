@@ -17,8 +17,8 @@
 
 ## General instructions:
 ### Pre-requisties:
-Python3(Required)
-Docker(optional)
+* Python3(Required)
+* Docker(optional)
 ### Installation and Basic information 
 * pip install -r requirments.txt
 * The sample dataset is located in the sample_test_dataset directory
