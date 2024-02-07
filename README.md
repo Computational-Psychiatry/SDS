@@ -4,8 +4,8 @@
 
 **SDS** consists of two main components:</p>
 
-* **Assembler** : Creating standardized dervied filenames from raw files using json metadata information.
-* **Validator** :  Validating dervied filenames for any anamolies.
+* **Assembler** : Creating standardized raw filenames structure from source folder using json metadata information.
+* **Validator** :  Validating standardized raw filenames for any anamolies.
   
 
 ### Table of contents: 
