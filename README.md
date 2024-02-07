@@ -1,10 +1,10 @@
 # SDS
 
-<p> Sensor Data Structure(SDS) is a Python library for creating and validating a filename standards for raw video files.<br>
+<p> Sensor Data Structure(SDS) is a Python library for creating raw directory from source folders and validating the filename standards of raw directory.<br>
 
 **SDS** consists of two main components:</p>
 
-* **Assembler** : Creating standardized raw filenames structure from source folder using json metadata information.
+* **Assembler** : Creating standardized raw directory and it's folder/filenames structure from source folder using json metadata information.
 * **Validator** :  Validating standardized raw filenames for any anamolies.
   
 
@@ -30,9 +30,12 @@
 <p>Assembler converts a source folder to the raw directory format.<br> 
 There are two main steps involved:</p>
 
-* Converting the source folder to a csv format. This CSV contains all the details of the source folder.
-* Generating the raw folder structure from the Complied csv. 
+#### Two main steps in Assembler
 
+* **compileSource** : Converting the source folder to a csv format. This CSV contains all the details of the source folder.
+* **createRaw** : Generating the raw folder structure from the Complied csv. 
+
+#### Details of sample source dataset and compiled csv outputs
 * A sample source directory is provided in sample_test_dataset. 
 * The sample outputs for complied csv and raw folder structure is provided in sample_outputs directory.
 
@@ -42,9 +45,7 @@ There are two main steps involved:</p>
 from SDS_Assembler import compileSource, createRaw 
 ```
 
-### A) Steps to capture all source directory details into a complied csv:
-
-#### compileSource:
+* #### compileSource:
 Input :path_to_source_directory
 Output: path_to_compiled_csv
 
@@ -56,9 +57,7 @@ Output: path_to_compiled_csv
 data = compileSource(path_to_source_directory, path_to_compiled_CSV)
 ```
 
-### B) To create raw folder structure from the complied csv source files:
-
-### createRaw:
+* ### createRaw:
 Input: path_to_complied_csv
 Output: path_to_raw_folder
 
