@@ -8,25 +8,21 @@
 * **Validator** :  Validating dervied filenames for any anamolies.
   
 
-
-
-
-
-
 ### Table of contents: 
 1. [General Instructions](#requirements)
 2. [Assembler](#Assembler)
 3. [Validator](#Validator)
 4. [Docker setup](#Docker)
 
+
+## General instructions:
 ### Pre-requisties:
 Python3(Required)
 Docker(optional)
-
-#### General instructions:
-1. pip install -r requirments.txt
-2. The sample dataset is located in the sample_test_dataset directory
-3. All the outputs are stored in the sample_outputs directory
+### Installation and Basic information 
+* pip install -r requirments.txt
+* The sample dataset is located in the sample_test_dataset directory
+* All the outputs are stored in the sample_outputs directory
 
 #### Sensor Data strcuture instructions to run the Assembler and Validator
 
