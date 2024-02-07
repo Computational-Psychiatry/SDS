@@ -1,8 +1,8 @@
 # SDS
 
-<p>SDS is a Python library for developing and validating a filename standards for raw video files.<br>
+<p> **SDS** is a Python library for creating and validating a filename standards for raw video files.<br>
 
-SDS consists of two main components:</p>
+**SDS** consists of two main components:</p>
 
 * **Assembler** : Creating standardized dervied filenames from raw files using json metadata information.
 * **Validator** :  Validating dervied filenames for any anamolies.
