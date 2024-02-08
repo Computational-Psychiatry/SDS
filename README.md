@@ -123,9 +123,9 @@ python3 main_assembler_executable.py -o "/home/SDS_master_cloned/SDS/sample_outp
 
 Valdiation can be performed either on a single file or the whole raw directory 
 
-#### Details of sample validated dataset and sample compiled csv outputs
-* A sample source directory is provided in sample_test_dataset. 
-* The sample outputs for complied csv and raw folder structure is provided in sample_outputs directory.
+#### Details of sample raw dataset and sample raw dataset validated outputs
+* A sample raw dataset is provided in sample_outputs/raw/. 
+* The sample outputs for validation are located in the sample_outputs directory.
 
 ## SDS_Validator_as_Library
 
