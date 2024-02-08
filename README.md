@@ -57,7 +57,7 @@ Output: path_to_compiled_csv
 data = compileSource(path_to_source_directory, path_to_compiled_CSV)
 ```
 
-* ### createRaw:
+* #### createRaw:
 Input: path_to_complied_csv
 Output: path_to_raw_folder
 
