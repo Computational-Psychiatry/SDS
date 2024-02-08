@@ -89,10 +89,9 @@ Example Linux os:
 /home/SDS/SDS_assembler_as_executable# python3 main.py -s "/home/SDS/source_details_doc.txt" -o "/home/SDS/outputs/source_test.csv"
 ```
 Inputs and outputs for running on command line:
-a) -s : specify the path of source folder in a text file
-b) -o : specify the path of output complied csv
+* -s : specify the path of source folder in a text file
+* -o : specify the path of output complied csv
 
-### B) To create raw folder structure from the complied csv source files:
 
 ### createRaw:
 Input: path_to_complied_csv
@@ -113,10 +112,9 @@ on windows:
 on linux:
 ###  
 
+python3 main_assembler_executable.py -o "/home/SDS_master_cloned/SDS/sample_outputs/raw/" -i "/home/SDS_master_cloned/SDS/sample_outputs/source_test_exe_1.csv"
 
 ```
-
-
 
 
 
