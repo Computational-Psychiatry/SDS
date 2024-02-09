@@ -84,6 +84,7 @@ Example Windows os:
 
 C:\Users\pargim\PycharmProjects\All_SDS_libraries_and_executables\SDS_assembler_as_executable>python3 main_assembler_executable.py -s "C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables_updated\\sample_test_dataset\\source_details_doc.txt" --o "C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables_updated\\sample_outputs\\source_test.csv
 
+
 Example linux os:
 
 python3 main_assembler_executable.py -s "/home/SDS_master_cloned/SDS/sample_test_dataset/source_details_doc.txt" -o "/home/SDS_master_cloned/SDS/sample_outputs/source_test_exe_1.csv"
