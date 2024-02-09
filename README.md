@@ -128,57 +128,59 @@ Valdiation can be performed either on a single file or the whole raw directory
 * A sample raw dataset is provided in sample_outputs/raw/. 
 * The sample outputs for validation are raw_file_validator.txt and raw_folder_validator.txt located in the sample_outputs directory.
 
-## SDS_Validator_as_Library
+## Validator as Library
 
 ```python
 from SDSValidator import validateFile, validateDirectory 
-```
-- ### Input : path_to_a_single_file(relative to Raw root) 
 
+```
+#### Validating a single file:
+* Input: Provide the path of single file in raw folder to be validated
+* Output :  {message: warning or error message; None if it is successful}  
 ```python
 status, message = validateFile(path_to_a_single_file) 
 status: True/False
 {filename:message}
 ```
-#### output {message: warning or error message; None if it is successful}  
+### Validating the whole raw directory:
 
-- ### Input : path_to_raw_root_directory
+* Input: Provide the path of raw folder to be validated
+* Output : {message: warning or error messages for all directories and files; None if all are successful} 
 
-#### message: warning or error messages for all directories and files(Dictionary) 
-#### {filename: message} 
-#### None if all are successful 
 ```python
 status, messages = validateDirectory(path_to_raw_root) 
 ``` 
-## SDS_Validator_as_Executable
 
-### - sdsValidator -f path-to-a-single-file [-o path-to-output-file] 
+## Validator as Executable
 
-#### Input: <path-to-a-single-file>, a single video or audio file. Program checks for file-level-rule. The path has to be given relative to Raw root 
-
-#### Output: True/False, whether it satisfies the rules or not 
-
+#### Validating a single file
+* Input: -f - path to single file. <path-to-a-single-file>, a single video or audio file. Program checks for file-level-rule. The path has to be given relative to Raw root 
+* Output: -o - path to output file.  True/False, whether it satisfies the rules or not 
+  
 #### OPTIONAL: if -o is used, write messages to the file  
 
 ```Python
-(base) C:\Users\pargim\PycharmProjects\SDS_evaluator_as_executable>python3 main.py -f "C:\\Users\\pargim\\PycharmProjects\\SDS_evaluator_as_library\\20230628_example_SDS\\raw\\sub-ACES007\\ses-1\\sdsvideo\\sub-ACES007_ses-1_task-CASS_cnd-Bored_tgt-Participant_run-2_dev-goProHero11Black_rgba.mp4" -o "C:\\Users\\pargim\\PycharmProjects\\test_validator_outcome_exe_single_file_1.txt"
+*Windows
+(base) C:\Users\pargim\PycharmProjects\All_SDS_libraries_and_executables_updated\Validator>python3 main_validator_executable.py -f "C:\Users\pargim\PycharmProjects\All_SDS_libraries_and_executables_updated\sample_outputs\raw\sub-ACES007\ses-1\sdsvideo\sub-ACES007_ses-1_task-CASS_cnd-Bored_tgt-Participant_run-2_dev-goProHero11Black_rgba.mp4" -o "C:\Users\pargim\PycharmProjects\All_SDS_libraries_and_executables_updated\sample_outputs\test_validator_outcome_exe_single_file_1.txt"
+
+*Linux
+/home/SDS_master_cloned/SDS/Validator# python3 main_validator_executable.py -f "/home/SDS_master_cloned/SDS/sample_outputs/raw/sub-ACES007/ses-1/sdsvideo/sub-ACES007_ses-1_task-CASS_cnd-Bored_tgt-Participant_run-2_dev-goProHero11Black_rgba.mp4" -o "/home/SDS_master_cloned/SDS/sample_outputs/raw_file_validated.txt"
 ```
 
- 
+#### Validating the raw folder
 
-### - sdsValidator -d path-to-raw-root [-o path-to-output-file] 
 
-#### Input: <path-to-raw-root> 
-
-#### Output: True/False, whether all directories and files satisfy all rules or not. Also print warnings and errors (but not success). 
-
-#### <File or directory name> : <warning or error message> 
-
-#### OPTIONAL: if -o is used, write messages to the file  
+* Input: -d <path-to-raw-root>, a single video or audio file. Program checks for file-level-rule. The path has to be given relative to Raw root 
+* Output: -o - path to output file.  True/False, whether all directories and files satisfy all rules or not. Also print warnings and errors (but not success).  OPTIONAL: if -o is used, write messages to the file   
 
 ```Python
-(base) C:\Users\pargim\PycharmProjects\SDS_evaluator_as_executable>python3 main.py -d "C:\\Users\\pargim\\PycharmProjects\\SDS_evaluator_as_library\\20230628_example_SDS\\raw\\" -o "C:\\Users\\pargim\\PycharmProjects\\test_validator_outcome_exe_1.txt"
+*Windows
+python3 main_validator_executable.py -d "C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables_updated\\sample_outputs\\raw" -o "C:\\Users\\pargim\\PycharmProjects\\All_SDS_libraries_and_executables_updated\\sample_outputs\\test_validator_outcome_exe_1.txt"
+
+*Linux
+python3 main_validator_executable.py -d "/home/SDS_master_cloned/SDS/sample_outputs/raw" -o "/home/SDS_master_cloned/SDS/sample_outputs/raw_folder_validated.txt"
 ```
+
 ## Docker
 #### Install of docker:
 https://docs.docker.com/get-docker/
@@ -192,32 +194,28 @@ docker pull 7090496133/sds_format_generator:version
 https://hub.docker.com/repository/docker/7090496133/sds_format_generator/general
 https://hub.docker.com/repository/docker/7090496133/sds_format_generator/tags?page=1&ordering=last_updated
 
-### Instructions to run docker on our server(ws03):
-1. systemctl restart docker
-2. docker ps -a(to view all the docker images)
-3. docker start sds_container (docker starting of the image instance)
-b)           docker exec -it sds_container bash(This command will take you inside the docker container)
-Insider the docker container:
-c)            Running of SDS_assembler_as_exceutable(root@ba8fd8ab4a84:/home/SDS/SDS_assembler_as_executable# python3 main.py --s "/home/SDS/source_details_doc.txt" --o "/home/SDS/outputs/source_test_exe_1.csv"):
-1. cd /home/SDS/SDS_assembler_as_executable
-2. python3 main.py --s "/home/SDS/source_details_doc.txt" --o "/home/SDS/outputs/source_test_exe_1.csv"
-d)           Running of SDS_validator_as_exceutable(root@ba8fd8ab4a84:/home/SDS/SDS_assembler_as_executable# python3 main.py -d "/home/SDS/outputs/raw/" -o "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"):
-1. cd /home/SDS/SDS_validator_as_executable
-2. python3 main.py -d "/home/SDS/outputs/raw/" -o "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"  
+## Instructions to run docker on our server(ws03):
+*   systemctl restart docker
+*   docker ps -a(to view all the docker images)
+*   docker start sds_container (docker starting of the image instance)
+*   docker exec -it sds_container bash(This command will take you inside the docker container)
+
+### Insider the docker container:\
+*  Running of SDS_assembler_as_exceutable(root@ba8fd8ab4a84:/home/SDS/SDS_assembler_as_executable# python3 main.py --s "/home/SDS/source_details_doc.txt" --o "/home/SDS/outputs/source_test_exe_1.csv"):
+*  cd /home/SDS/SDS_assembler_as_executable
+*  python3 main.py --s "/home/SDS/source_details_doc.txt" --o "/home/SDS/outputs/source_test_exe_1.csv"
+*  Running of SDS_validator_as_exceutable(root@ba8fd8ab4a84:/home/SDS/SDS_assembler_as_executable# python3 main.py -d "/home/SDS/outputs/raw/" -o "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"):
+*  cd /home/SDS/SDS_validator_as_executable
+*  python3 main.py -d "/home/SDS/outputs/raw/" -o "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"  
 
 
 Instructions to run on other linux machine or macos:
-a) Create an account on dockerhub
-b) docker pull 7090496133/sds_format_generator:version
-c) docker run -it 7090496133/sds_format_generator:version 
-d) docker run -it <mynewimage:latest> 7090496133/sds_format_generator:version
-e) exit out of docker using exit command
-f) docker exec -it <mynewimage:latest> bash
-
-Same instructions
-
-docker start 
-
+* Create an account on dockerhub
+* docker pull 7090496133/sds_format_generator:version
+* docker run -it 7090496133/sds_format_generator:version 
+* docker run -it <mynewimage:latest> 7090496133/sds_format_generator:version
+* exit out of docker using exit command
+* docker exec -it <mynewimage:latest> bash
 
 
 
