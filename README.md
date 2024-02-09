@@ -126,7 +126,7 @@ Valdiation can be performed either on a single file or the whole raw directory
 
 #### Details of sample raw dataset and sample raw dataset validated outputs
 * A sample raw dataset is provided in sample_outputs/raw/. 
-* The sample outputs for validation are located in the sample_outputs directory.
+* The sample outputs for validation are raw_file_validator.txt and raw_folder_validator.txt located in the sample_outputs directory.
 
 ## SDS_Validator_as_Library
 
