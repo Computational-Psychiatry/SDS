@@ -188,34 +188,37 @@ https://docs.docker.com/engine/install/
 https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-use-docker
 
 ## SDS_docker_contariner located on docker_hub:
-create an account on docker hub(provide link)
-Use the command to pull docker image:
-docker pull 7090496133/sds_format_generator:version
-https://hub.docker.com/repository/docker/7090496133/sds_format_generator/general
-https://hub.docker.com/repository/docker/7090496133/sds_format_generator/tags?page=1&ordering=last_updated
+* create an account on docker hub(provide link)
+* Link <a href="[http://www.something.com](https://hub.docker.com/repository/docker/7090496133/sds_format_generator/general)"> Docker hub link SDS container </a>
+* Link <a href="[http://www.something.com](https://hub.docker.com/repository/docker/7090496133/sds_format_generator/general)"> Docker hub link SDS container </a>
+* Use the command to pull docker image:
+*  1. docker pull 7090496133/sds_format_generator:version
 
 ## Instructions to run docker on our server(ws03):
 *   systemctl restart docker
 *   docker ps -a(to view all the docker images)
-*   docker start sds_container (docker starting of the image instance)
-*   docker exec -it sds_container bash(This command will take you inside the docker container)
+*   docker start 7f16 (docker starting of the image instance)
+*   docker exec -it 7f16 bash(This command will take you inside the docker container)
 
-### Insider the docker container:\
-*  Running of SDS_assembler_as_exceutable(root@ba8fd8ab4a84:/home/SDS/SDS_assembler_as_executable# python3 main.py --s "/home/SDS/source_details_doc.txt" --o "/home/SDS/outputs/source_test_exe_1.csv"):
-*  cd /home/SDS/SDS_assembler_as_executable
-*  python3 main.py --s "/home/SDS/source_details_doc.txt" --o "/home/SDS/outputs/source_test_exe_1.csv"
-*  Running of SDS_validator_as_exceutable(root@ba8fd8ab4a84:/home/SDS/SDS_assembler_as_executable# python3 main.py -d "/home/SDS/outputs/raw/" -o "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"):
-*  cd /home/SDS/SDS_validator_as_executable
-*  python3 main.py -d "/home/SDS/outputs/raw/" -o "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"  
+### Insider the docker container:
+
+*  Running of Assembler (root@<Container ID>):
+*  1.  cd  /home/SDS_latest/SDS/Assembler/
+*  2. Creating csv from source: /home/SDS_latest/SDS/Assembler/# python3 main_assembler_executable.py -s "/home/SDS_latest/SDS/sample_test_dataset/source_details_doc.txt" -o "/home/SDS_latest/SDS/sample_outputs/source_test_exe_1.csv"
+*  3. Creating raw folder/files from csv : python3 main_assembler_executable.py -o "/home/SDS_latest/SDS/sample_outputs/raw/" -i "/home/SDS_latest/SDS/sample_outputs/source_test_exe_1.csv"
+
+* Running of Validator(root@<container_id>):
+* cd /home/SDS_latest/SDS/Validator/
+* Validating a file : /home/SDS_latest/SDS/Validator# python3 main_validator_executable.py -d "python3 main_validator_executable.py -f "/home/SDS_latest/SDS/sample_outputs/raw/sub-ACES007/ses-1/sdsvideo/sub-ACES007_ses-1_task-CASS_cnd-Bored_tgt-Participant_run-2_dev-goProHero11Black_rgba.mp4" -o ""/home/SDS_latest/SDS/sample_outputs/raw/raw_file_validated.txt"  "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"):  
+*Validating a folder:  python3 main_assembler_executable.py -d ""/home/SDS_latest/SDS/sample_outputs/raw/" -o ""/home/SDS_latest/SDS/sample_outputs/raw/Validation_outcomes_docker_updated.txt"  
 
 
-Instructions to run on other linux machine or macos:
+#### commands to run on linux or Mac to exec :
 * Create an account on dockerhub
 * docker pull 7090496133/sds_format_generator:version
 * docker run -it 7090496133/sds_format_generator:version 
-* docker run -it <mynewimage:latest> 7090496133/sds_format_generator:version
 * exit out of docker using exit command
-* docker exec -it <mynewimage:latest> bash
+* docker exec -it 7090496133/sds_format_generator:version bash or docker exec -it <Container ID> bash
 
 
 
