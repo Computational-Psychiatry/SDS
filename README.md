@@ -203,14 +203,14 @@ https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-u
 ### Insider the docker container:
 
 *  Running of Assembler (root@<Container ID>):
-*  1.  cd  /home/SDS_latest/SDS/Assembler/
-*  2. Creating csv from source: /home/SDS_latest/SDS/Assembler/# python3 main_assembler_executable.py -s "/home/SDS_latest/SDS/sample_test_dataset/source_details_doc.txt" -o "/home/SDS_latest/SDS/sample_outputs/source_test_exe_1.csv"
-*  3. Creating raw folder/files from csv : python3 main_assembler_executable.py -o "/home/SDS_latest/SDS/sample_outputs/raw/" -i "/home/SDS_latest/SDS/sample_outputs/source_test_exe_1.csv"
+   1.  cd  /home/SDS_latest/SDS/Assembler/
+   2. Creating csv from source: /home/SDS_latest/SDS/Assembler/# python3 main_assembler_executable.py -s "/home/SDS_latest/SDS/sample_test_dataset/source_details_doc.txt" -o "/home/SDS_latest/SDS/sample_outputs/source_test_exe_1.csv"
+   3. Creating raw folder/files from csv : python3 main_assembler_executable.py -o "/home/SDS_latest/SDS/sample_outputs/raw/" -i "/home/SDS_latest/SDS/sample_outputs/source_test_exe_1.csv"
 
 * Running of Validator(root@<container_id>):
-* cd /home/SDS_latest/SDS/Validator/
-* Validating a file : /home/SDS_latest/SDS/Validator# python3 main_validator_executable.py -d "python3 main_validator_executable.py -f "/home/SDS_latest/SDS/sample_outputs/raw/sub-ACES007/ses-1/sdsvideo/sub-ACES007_ses-1_task-CASS_cnd-Bored_tgt-Participant_run-2_dev-goProHero11Black_rgba.mp4" -o ""/home/SDS_latest/SDS/sample_outputs/raw/raw_file_validated.txt"  "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"):  
-*Validating a folder:  python3 main_assembler_executable.py -d ""/home/SDS_latest/SDS/sample_outputs/raw/" -o ""/home/SDS_latest/SDS/sample_outputs/raw/Validation_outcomes_docker_updated.txt"  
+  1. cd /home/SDS_latest/SDS/Validator/
+  2. Validating a file : /home/SDS_latest/SDS/Validator# python3 main_validator_executable.py -d "python3 main_validator_executable.py -f "/home/SDS_latest/SDS/sample_outputs/raw/sub-ACES007/ses-1/sdsvideo/sub-ACES007_ses-1_task-CASS_cnd-Bored_tgt-Participant_run-2_dev-goProHero11Black_rgba.mp4" -o ""/home/SDS_latest/SDS/sample_outputs/raw/raw_file_validated.txt"  "/home/SDS/outputs/Validation_outcomes_docker_updated.txt"):  
+3. Validating a folder:  python3 main_assembler_executable.py -d ""/home/SDS_latest/SDS/sample_outputs/raw/" -o ""/home/SDS_latest/SDS/sample_outputs/raw/Validation_outcomes_docker_updated.txt"  
 
 
 #### commands to run on linux or Mac to exec :
