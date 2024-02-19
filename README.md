@@ -201,7 +201,7 @@ https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-u
 
 ### Insider the docker container:
 
-*  Running of Assembler (root@<Container ID>):
+*  Running of Assembler (root@<Container_id>):
   ```
    1.  cd  /home/SDS_latest/SDS/Assembler/
    2. Creating csv from source: /home/SDS_latest/SDS/Assembler/# python3 main_assembler_executable.py -s "/home/SDS_latest/SDS/sample_test_dataset/source_details_doc.txt" -o "/home/SDS_latest/SDS/sample_outputs/source_test_exe_1.csv"
