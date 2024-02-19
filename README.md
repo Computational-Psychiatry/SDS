@@ -188,11 +188,10 @@ https://docs.docker.com/engine/install/
 https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-use-docker
 
 ## SDS_docker_contariner located on docker_hub:
-* create an account on docker hub(provide link)
+* create an account on docker hub([docker_hub](https://hub.docker.com/))
 * Link <a href="[http://www.something.com](https://hub.docker.com/repository/docker/7090496133/sds_format_generator/general)"> Docker hub link SDS container </a>
 * Link <a href="[http://www.something.com](https://hub.docker.com/repository/docker/7090496133/sds_format_generator/general)"> Docker hub link SDS container </a>
-* Use the command to pull docker image:
-*  1. docker pull 7090496133/sds_format_generator:version
+  
 
 ## Instructions to run docker on our server(ws03):
 *   systemctl restart docker
@@ -215,8 +214,7 @@ https://www.digitalocean.com/community/tutorial-collections/how-to-install-and-u
   3. Validating a folder:  python3 main_assembler_executable.py -d ""/home/SDS_latest/SDS/sample_outputs/raw/" -o ""/home/SDS_latest/SDS/sample_outputs/raw/Validation_outcomes_docker_updated.txt"  
 ```
 
-#### commands to run on linux or Mac to exec :
-* Create an account on dockerhub
+#### Commands to run on linux or Mac to exec :
 * docker pull 7090496133/sds_format_generator:version
 * docker run -it 7090496133/sds_format_generator:version 
 * exit out of docker using exit command
