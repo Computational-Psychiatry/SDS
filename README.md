@@ -27,8 +27,7 @@
 
 ## Assembler
 
-<p>Assembler converts a source folder to the raw directory format.<br> 
-There are two main steps involved:</p>
+<p>Assembler converts a source folder to the raw directory format</p>
 
 #### Two main steps in Assembler
 
@@ -122,11 +121,12 @@ python3 main_assembler_executable.py -o "/home/SDS_master_cloned/SDS/sample_outp
 
 <p>Validator validates the raw directory format created by assembler for any anamolies.</p>
 
-Valdiation can be performed either on a single file or the whole raw directory 
+
 
 #### Details of sample raw dataset and sample raw dataset validated outputs
-* A sample raw dataset is provided in sample_outputs/raw/. 
-* The sample outputs for validation are raw_file_validator.txt and raw_folder_validator.txt located in the sample_outputs directory.
+* Valdiation can be performed either on a single file or the whole raw directory 
+* Validation directory: A sample raw dataset is provided in sample_outputs/raw/. 
+* Validation File: The sample outputs for validation are raw_file_validator.txt and raw_folder_validator.txt located in the sample_outputs directory.
 
 ## Validator as Library
 
